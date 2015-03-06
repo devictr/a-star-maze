@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Maze Generator/Solver - Depth First Search and A-Star Algorithm</title>
+    <link type="text/css" rel="stylesheet" href="app/bower_components/materialize/dist/css/materialize.min.css"
+          media="screen,projection"/>
+    <link rel="stylesheet" href="app/css/maze.css"/>
+
+
+</head>
+<body>
+<!--<h1>Maze Generator/Solver - Depth First Search and A-Star Algorithm</h1>-->
+
+<canvas id="maze" width="1000" height="500"></canvas>
+<!--<textarea name="" id="vals" cols="30" rows="10"></textarea>-->
+
+<script src="app/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="app/bower_components/underscore/underscore-min.js"></script>
+<script src="app/bower_components/materialize/dist/js/materialize.min.js"></script>
+<script src="app/bower_components/js-priority-queue/priority-queue.min.js"></script>
+
+<script src="app/js/src/vertex.js"></script>
+<script src="app/js/src/graph.js"></script>
+<script src="app/js/src/mazeGenerator.js"></script>
+<script src="app/js/src/mapCanvas.js"></script>
+<script>
+    $(document).ready(function () {
+        var maze = new MapCanvas("maze");
+        maze.generate();
+        maze.draw();
+        maze.solve();
+//        maze.benchmark();
+        $("#benchmark").click(function() {
+        });
+    });
+</script>
+</body>
+</html>
